@@ -4,14 +4,14 @@
 #
 Name     : perl-Crypt-Random-Seed
 Version  : 0.03
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Summary  : 'Provide strong randomness for seeding'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-Crypt-Random-Seed-license
-Requires: perl-Crypt-Random-Seed-man
+Requires: perl-Crypt-Random-Seed-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 
 %description
 Crypt::Random::Seed version 0.03
@@ -21,20 +21,21 @@ of randomness on the current platform, typically for use in seeding a CSPRNG
 such as Math::Random::ISAAC.  It can also be restricted to non-blocking
 sources, and has a very simple plug-in method.
 
+%package dev
+Summary: dev components for the perl-Crypt-Random-Seed package.
+Group: Development
+Provides: perl-Crypt-Random-Seed-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-Crypt-Random-Seed package.
+
+
 %package license
 Summary: license components for the perl-Crypt-Random-Seed package.
 Group: Default
 
 %description license
 license components for the perl-Crypt-Random-Seed package.
-
-
-%package man
-Summary: man components for the perl-Crypt-Random-Seed package.
-Group: Default
-
-%description man
-man components for the perl-Crypt-Random-Seed package.
 
 
 %prep
@@ -62,12 +63,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Crypt-Random-Seed
-cp LICENSE %{buildroot}/usr/share/doc/perl-Crypt-Random-Seed/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Crypt-Random-Seed
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Crypt-Random-Seed/LICENSE
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -76,12 +77,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Crypt/Random/Seed.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Crypt/Random/Seed.pm
 
-%files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Crypt-Random-Seed/LICENSE
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Crypt::Random::Seed.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Crypt-Random-Seed/LICENSE
