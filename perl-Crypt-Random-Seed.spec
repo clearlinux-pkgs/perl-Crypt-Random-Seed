@@ -4,7 +4,7 @@
 #
 Name     : perl-Crypt-Random-Seed
 Version  : 0.03
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Summary  : Simple method to get strong randomness.
