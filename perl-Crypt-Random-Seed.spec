@@ -4,10 +4,10 @@
 #
 Name     : perl-Crypt-Random-Seed
 Version  : 0.03
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
-Summary  : 'Provide strong randomness for seeding'
+Summary  : Simple method to get strong randomness.
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Crypt-Random-Seed-license = %{version}-%{release}
@@ -25,6 +25,7 @@ sources, and has a very simple plug-in method.
 Summary: dev components for the perl-Crypt-Random-Seed package.
 Group: Development
 Provides: perl-Crypt-Random-Seed-devel = %{version}-%{release}
+Requires: perl-Crypt-Random-Seed = %{version}-%{release}
 
 %description dev
 dev components for the perl-Crypt-Random-Seed package.
