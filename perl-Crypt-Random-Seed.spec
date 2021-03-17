@@ -4,7 +4,7 @@
 #
 Name     : perl-Crypt-Random-Seed
 Version  : 0.03
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Summary  : 'Provide strong randomness for seeding'
@@ -100,4 +100,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Crypt/Random/Seed.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Crypt/Random/Seed.pm
