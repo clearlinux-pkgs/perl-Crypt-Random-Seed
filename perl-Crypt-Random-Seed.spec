@@ -7,7 +7,7 @@
 #
 Name     : perl-Crypt-Random-Seed
 Version  : 0.03
-Release  : 30
+Release  : 31
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DANAJ/Crypt-Random-Seed-0.03.tar.gz
 Summary  : 'Provide strong randomness for seeding'
